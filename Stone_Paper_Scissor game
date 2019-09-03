@@ -1,0 +1,134 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	
+	int i,j,m=0,n=0;
+	char a,b;
+	int c;
+	printf("\t\t\t\tSTONE_PAPER_SCISSOR GAME:-\n\t\t\t\t\t  -by M.MUHUNTHAN\nGame is built on 30.08.2019\n\nPRESS ANY KEY TO CONTINUE");
+	getch();
+	printf("\n\n\t\t\t-----MENU-----\n\t\t*press 1 for Stone\n\t\t*press 2 for Paper\n\t\t*press 3 for Scissor\n\n\t\tPRESS ANY KEY TO VIEW THE RULE OF THE GAME");
+	getch();
+	printf("\n\n\t\tRULES:\n\t<<Two users have to play>>\n\t<<5 Rounds>>\n\t<<Best of 5 is the winner>>\n\t<<If you enter invalid input, points will be given to the opponent in that particular round>>\n\n\t\tAre you Ready?\n\t\tPRESS ANY KEY TO START THE GAME");
+	getch();
+	for(i=0;i<5;i++)
+	{
+		printf("\n\nROUND %d:-",i+1);
+		printf("\nUser1's turn:");
+		a=getch();
+		if(a!='1'&&a!='2'&&a!='3')
+		{
+			printf("\nWrong input:Technical point to User2");
+			n++;
+			continue;
+		}
+		printf("\nUser2's turn:");
+		b=getch();
+		if(b!='1'&&b!='2'&&b!='3')
+		{
+		
+			printf("\nWrong input:Technical point to user1 ");
+			m++;
+			continue;
+		}
+		int c=(int)(a-'0')+(int)(b-'0');
+		if(a==b)
+		{
+			if(a=='1')
+			{
+				printf("\n\nBoth users entered STONE");
+				printf("\nDRAW in this round,No points");
+			}
+			else if(a=='2')
+			{
+				printf("\n\nBoth users entered PAPER");
+				printf("\nDRAW in this round,No points");
+			}
+			else if(a=='3')
+			{
+				printf("\n\nBoth users entered SCISSOR");
+				printf("\nDRAW in this round,No points");
+			}
+			else
+			{
+				printf("\n\nBoth entered invalid option\nNo points to each other");
+			}
+		}
+		else if(c==3)
+		{
+			if(a=='1')
+			{
+				printf("\n\nUser1 entered STONE");
+				printf("\nUser2 entered PAPER");
+				n++;
+				printf("\nUser2 gets one point in this round");
+			}
+			else
+			{
+				printf("\n\nUser1 entered PAPER");
+				printf("\nUser2 entered STONE");
+				m++;
+				printf("\nUser1 gets one point in this round");
+			}
+		}
+		else if(c==4)
+		{
+			if(b!='3')
+			{
+				printf("\n\nUser1 entered SCISSOR");
+				printf("\nUser2 entered STONE");
+				n++;
+				printf("\nUser2 gets one point in this round");
+			}
+			else
+			{
+				printf("\n\nUser1 entered STONE");
+				printf("\nUser2 entered SCISSOR");
+				m++;
+				printf("\nUser1 gets one point in this round");
+			}
+		}
+		else if(c==5)
+		{
+			if(a=='2')
+			{
+				printf("\n\nUser1 entered PAPER");
+				printf("\nUser2 entered SCISSOR");
+				n++;
+				printf("\nUser2 gets one point in this round");
+			}
+			else
+			{
+				printf("\n\nUser1 entered SCISSOR");
+				printf("\nUser2 entered PAPER");
+				m++;
+				printf("\nUser1 gets one point in this round");
+			}
+		}
+		else
+		{
+			printf("\\nSomething went wrong!");
+			break;
+		}
+		if(m>2||n>2)
+		{
+			break;
+		}
+	}
+	printf("\n\n\t\t\tUser1 got %d points totally",m);
+	printf("\n\t\t\tUser2 got %d points totally",n);
+	if(m>n)
+	{
+		printf("\n\n\t\t****User1 is the WINNER****");
+	}
+	else if(n>m)
+	{
+		printf("\n\n\t\t****User2 is the WINNER****");
+	}
+	else
+	{
+		printf("\n\n\t\t*****Match Draw*****");
+	}
+	getch();
+}
