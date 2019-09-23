@@ -1,0 +1,367 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void main()
+{
+	int i,j,k,tri=0,o,p,q,x=0,y=0,a,b,v,u,sum1=0,sum2=0,r,f,d,e,mad=0,flag=0,abc;
+	char m[1],n[1],s[1],t,g,h,c;
+	i=0;
+	printf("\t\t\t\tHand Criket\n\t\t\t\t\t-by M.Muhunthan\nThe game is built on (23.09.2019)");
+	printf("\n\n\t\tDo u want to see the pre-requirities of this game?\n\t\t\tIf yes,(PRESS 1,else anyother number: ");
+	scanf("%d",&f);
+	fflush(stdin);
+	if(f==1)
+	{
+		printf("\n\t*Two Users should play\n\t*Two keyboard is recommended\n\t*User can take a maximum of 6 runs in a ball");
+	}
+	i=0;
+	while(i<1)
+	{
+	printf("\n\n  User1 choose odd or even?");
+	printf("   (Press 1 for odd, Press 2 for even) :");
+	scanf("%d",&r);
+	fflush(stdin);
+	if(r==1||r==2)
+	{
+		i++;
+	}
+	else
+	{
+		printf("\nPlz enter valid option.....",r);
+	}
+	}
+	i=0;
+	while(i<1)
+	{
+		printf("\nUser1 your turn: ");
+		m[0]=getch();
+		fflush(stdin);
+		if(isdigit(m[0]))
+		{
+		d=atoi(m);
+		if(d<7 && d!=0)
+		{
+			i++;
+		}
+		else
+		{
+			printf("\nYou should only enter input from 1 to 6");
+		}
+		}
+		else
+		{
+			printf("\nPlease enter only a number!");
+		}
+	}
+	i=0;
+	while(i<1)
+	{
+		printf("\nUser2 your turn: ");
+		scanf("%d",&e);
+		fflush(stdin);
+		if(e==1||e==2||e==3||e==4||e==5||e==6)
+		{
+			i++;
+		}
+		else
+		{
+			printf("\nYou should only enter input from 1 to 6");
+		}
+	}
+	printf("\nUser1 entered %d\nUser2 entered %d",d,e);
+	o=d+e;
+	if(r==1 && o%2==1)
+	{
+		printf("\n\t\tUser1 won the toss");
+		x++;
+	}
+	else if(r==1 && o%2==0)
+	{
+		printf("\n\t\tUser2 won the toss");
+		y++;
+	}
+	else if(r==2 && o%2==0)
+	{
+		printf("\n\t\tUser1 won the toss");
+		x++;
+	}
+	else
+	{
+		printf("\n\t\tUser2 won the toss");
+		y++;
+	}
+	if(x==1)
+	{
+		printf("\n\nUser1 choose batting or bowling?  (Enter 1 for 'batting', anyother number for bowling):");
+		scanf("%d",&p);
+		if(p==1)
+		{
+			printf("\nUser1 choosed batting....");mad=1;
+		}
+		else
+		{
+			printf("\nUser1 choosed bowling....");
+		}
+	}
+	else
+	{
+		printf("\n\nUser2 choose batting or bowling?  (Enter 1 for 'batting', anyother number for bowling)");
+		scanf("%d",&q);
+		if(q==1)
+		{
+			printf("\nUser2 choosed batting....");
+		}
+		else
+		{
+			printf("\nUser2 choosed bowling....");mad=1;
+		}
+	}
+	if(mad==1)
+	{
+		flag=1;
+		while(tri!=1)
+		{
+			i=0;
+			while(i<1)
+			{
+				printf("\nUser1's turn: ");
+				s[0]=getch();
+				fflush(stdin);
+				if(isdigit(s[0]))
+				{
+				a=atoi(s);
+				if(a<7&&a!=0)
+				{
+					i++;
+				}
+				else
+				{
+					printf("\nYou should only enter from 1 to 6");
+				}
+				}
+				else
+				{
+					printf("\nEnter a number.....You entered a character!");
+				}
+			}
+			i=0;
+			while(i<1)
+			{
+				printf("\nUser2's turn: ");
+				scanf("%d",&b);
+				fflush(stdin);
+				if(b<7 && b!=0)
+				{
+					i++;
+				}
+				else
+				{
+					printf("\nYou should only enter from 1 to 6");
+				}
+			}
+			if(a!=b)
+			{
+				abc=sum1+a;
+				printf("\n\nBatsman's score: %d+%d=%d",sum1,a,abc);
+				sum1+=a;
+			}
+			else
+			{
+				printf("\n\nbatsman out!......");
+				printf("\n\tUser1 scored %d runs",sum1);
+				tri=1;
+			}
+		}
+	}
+	else
+	{
+		while(tri!=1)
+		{
+			i=0;
+			while(i<1)
+			{
+				printf("\nUser2's turn: ");
+				s[0]=getch();
+				fflush(stdin);
+				if(isdigit(s[0]))
+				{
+				a=atoi(s);
+				if(a<7 && a!=0)
+				{
+					i++;
+				}
+				else
+				{
+					printf("\nYou should only enter from 1 to 6");
+				}
+				}
+				else
+				{
+					printf("\nEnter a number.....You entered a character");
+				}
+			}
+			i=0;
+			while(i<1)
+			{
+				printf("\nUser1's turn: ");
+				scanf("%d",&b);
+				fflush(stdin);
+				if(b<7 && b!=0)
+				{
+					i++;
+				}
+				else
+				{
+					printf("\nYou should only enter from 1 to 6");
+				}
+			}
+			if(a!=b)
+			{
+				abc=sum2+a;
+				printf("\n\nBatsman's score: %d+%d=%d",sum2,a,abc);
+				sum2+=a;
+			}
+			else
+			{
+				printf("\n\nbatsman out!......");
+				printf("\n\tUser2 scored %d runs",sum2);
+				tri=1;
+			}
+		}
+	}
+	tri=0;
+	if(flag==0)
+	{
+		while(tri!=1)
+		{
+			i=0;
+			while(i<1)
+			{
+				printf("\nUser1's turn: ");
+				s[0]=getch();
+				fflush(stdin);
+				if(isdigit(s[0]))
+				{
+				a=atoi(s);
+				if(a<7 && a!=0)
+				{
+					i++;
+				}
+				else
+				{
+					printf("\nYou should only enter from 1 to 6");
+				}
+				}
+				else
+				{
+					printf("\nEnter a number.....you entered a character!");
+				}
+			}
+			i=0;
+			while(i<1)
+			{
+				printf("\nUser2's turn: ");
+				scanf("%d",&b);
+				fflush(stdin);
+				if(b<7 && b!=0)
+				{
+					i++;
+				}
+				else
+				{
+					printf("\nYou should only enter from 1 to 6");
+				}
+			}
+			if(a!=b)
+			{
+				printf("\n\nBatsman's score: %d+%d=%d",sum1,a,sum1+a);
+				sum1+=a;
+				
+			}
+			else
+			{
+				printf("\n\nbatsman out!......");
+				printf("\n\tUser1 scored %d runs",sum1);
+				tri=1;
+			}
+			if(sum1>sum2)
+			{
+				printf("\n\tUser1 scored %d runs",sum1);
+				break;
+			}
+		}
+	}
+	else
+	{
+		while(tri!=1)
+		{
+			i=0;
+			while(i<1)
+			{
+				printf("\nUser2's turn: ");
+				s[0]=getch();
+				fflush(stdin);
+				if(isdigit(s[0]))
+				{
+				a=atoi(s);
+				if(a<7 && a!=0)
+				{
+					i++;
+				}
+				else
+				{
+					printf("\nYou should only enter from 1 to 6");
+				}
+				}
+				else
+				{
+					printf("\nEnter a number.....You entered a character!");
+				}
+			}
+			i=0;
+			while(i<1)
+			{
+				printf("\nUser1's turn: ");
+				scanf("%d",&b);
+				fflush(stdin);
+				if(b<7 && b!=0)
+				{
+					i++;
+				}
+				else
+				{
+					printf("\nYou should only enter from 1 to 6");
+				}
+			}
+			if(a!=b)
+			{
+				printf("\n\nBatsman's score: %d+%d=%d",sum2,a,sum2+a);
+				sum2+=a;
+			}
+			else
+			{
+				printf("\n\nbatsman out!......");
+				printf("\n\tUser2 scored %d runs",sum2);
+				tri=1;
+			}
+			if(sum2>sum1)
+			{
+				printf("\n\tUser2 scored %d runs",sum2);
+				break;
+			}
+		}
+	}
+	if(sum1>sum2)
+	{
+		printf("\n\n\t\t\tUser1 is the Winner...");
+	}
+	else if(sum1<sum2)
+	{
+		printf("\n\n\t\t\tUser2 is the winner...");
+	}
+	else
+	{
+		printf("\n\n\t\tMatch DRAW...");
+	}
+	getch();
+}
