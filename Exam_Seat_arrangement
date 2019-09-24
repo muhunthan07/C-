@@ -42,7 +42,6 @@ void main()
 					a[i][j]=sum++;
 					if(sum>r)
 					{
-						
 						break;
 				    }
 				}
