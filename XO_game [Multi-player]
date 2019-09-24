@@ -1,0 +1,365 @@
+#include<stdio.h>
+#include<conio.h> 
+#include<stdlib.h>
+void main()
+{
+	int i,j,k=0,m,n,r;
+	char x;
+	int a[3][3]={{0,0,0},{0,0,0},{0,0,0}};
+	printf("\t\t\t\t1 or 2 GAME:(XO game)\n\t\t\t\t\t-by M.Muhunthan\n---Game is built on 05.09.2019\n\n");
+	printf("\t\t\t\t  ----MENU----\n\n\t\t\tEnter the following:\n\n\t\t1 for (0,0)position\n\t\t2 for (0,1)position\n\t\t3 for (0,2)position\n\t\t4 for (1,0)position\n\t\t5 for (1,1)position\n\t\t6 for (1,2)position\n\t\t7 for (2,0)position\n\t\t8 for (2,1)position\n\t\t9 for (2,2)position");
+	printf("\n\nThe Given XO format:\n\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("%d",a[i][j]);
+		}
+		printf("\n");
+	}
+	while(k<9)
+	{
+		if(k%2==0)
+		{
+			printf("\nUser1 enter the position number:");
+			scanf("%c",&x);
+			fflush(stdin);
+			r=(int)(x-'0');
+			if(!isalpha(x))
+			{
+				switch(r)
+				{
+					case 1:
+						if(a[0][0]==0)
+						{
+						a[0][0]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					case 2:
+						if(a[0][1]==0)
+						{
+						a[0][1]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					case 3:
+						if(a[0][2]==0)
+						{
+						a[0][2]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					case 4:
+						if(a[1][0]==0)
+						{
+						a[1][0]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					case 5:
+						if(a[1][1]==0)
+						{
+						a[1][1]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					case 6:
+						if(a[1][2]==0)
+						{
+						a[1][2]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					case 7:
+						if(a[2][0]==0)
+						{
+						a[2][0]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					case 8:
+						if(a[2][1]==0)
+						{
+						a[2][1]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					case 9:
+						if(a[2][2]==0)
+						{
+						a[2][2]=1;
+						k++;
+						}
+						else
+						{
+							printf("\nAlready this place filled!!\n\tEnter another input\n");
+						}
+						break;
+					default:
+						{
+							printf("\nEnter valid input from 1 to 9!\n");
+						}
+				}
+			}
+			else
+				{
+					printf("\nYou entered a character.....Please enter the postion!\n");
+				}		
+			for(i=0;i<3;i++)
+			{
+				for(j=0;j<3;j++)
+				{
+					printf("%d",a[i][j]);
+				}
+				printf("\n");
+			}
+			if(a[0][0]==a[0][1]&&a[0][0]==a[0][2]&&a[0][0]!=0&&a[0][1]!=0&&a[0][2]!=0)
+			{
+				printf("\n\t****User1 is the WINNER!!****\n\n");
+				break;
+			}
+			if(a[0][0]==a[1][0]&&a[0][0]==a[2][0]&&a[0][0]!=0&&a[1][0]!=0&&a[2][0]!=0)
+			{
+				printf("\n\t****User1 is the WINNER!!****\n\n");
+				break;
+			}
+			if(a[2][0]==a[2][1]&&a[2][0]==a[2][2]&&a[2][0]!=0&&a[2][1]!=0&&a[2][2]!=0)
+			{
+				printf("\n\t****User1 is the WINNER!!****\n\n");
+				break;
+			}
+			if(a[0][2]==a[1][2]&&a[0][2]==a[2][2]&&a[0][2]!=0&&a[1][2]!=0&&a[2][2]!=0)
+			{
+				printf("\n\t****User1 is the WINNER!!****\n\n");
+				break;
+			}
+			if(a[0][2]==a[1][1]&&a[0][2]==a[2][0]&&a[0][2]!=0&&a[1][1]!=0&&a[2][0]!=0)
+			{
+				printf("\n\t****User1 is the WINNER!!****\n\n");
+				break;
+			}
+			if(a[0][0]==a[1][1]&&a[0][0]==a[2][2]&&a[0][0]!=0&&a[1][1]!=0&&a[2][2]!=0)
+			{
+				printf("\n\t****User1 is the WINNER!!****\n\n");
+				break;
+			}
+			if(a[1][0]==a[1][1]&&a[1][0]==a[1][2]&&a[1][0]!=0&&a[1][1]!=0&&a[1][2]!=0)
+			{
+				printf("\n\t****User1 is the WINNER!!****\n\n");
+				break;
+			}
+			if(a[0][1]==a[1][1]&&a[0][1]==a[2][1]&&a[0][1]!=0&&a[1][1]!=0&&a[2][1]!=0)
+			{
+				printf("\n\t****User1 is the WINNER!!****\n\n");
+				break;
+			}
+		}
+		else
+		{
+			if(k%2!=0)
+			{
+				printf("\nUser2 enter the position number:");
+				scanf("%c",&x);
+				fflush(stdin);
+				r=(int)(x-'0');
+				if(!isalpha(x))
+				{
+					switch(r)
+					{
+						case 1:
+							if(a[0][0]==0)
+							{
+								a[0][0]=2;
+								k++;	
+							}
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}
+							break;
+						case 2:
+							if(a[0][1]==0)
+							{
+							a[0][1]=2;	
+							k++;
+							}
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}
+							break;
+						case 3:
+							if(a[0][2]==0)
+							{
+								a[0][2]=2;
+								k++;
+							}	
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}
+							break;
+						case 4:
+							if(a[1][0]==0)
+							{
+							a[1][0]=2;
+							k++;
+							}
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}
+							break;
+						case 5:
+							if(a[1][1]==0)
+							{	
+								a[1][1]=2;	
+								k++;
+							}	
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}
+							break;
+						case 6:
+							if(a[1][2]==0)
+							{
+								a[1][2]=2;
+								k++;
+							}
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}
+							break;
+						case 7:
+							if(a[2][0]==0)
+							{
+								a[2][0]=2;	
+								k++;
+							}
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}
+							break;
+						case 8:
+							if(a[2][1]==0)
+							{
+								a[2][1]=2;
+								k++;
+							}
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}
+							break;
+						case 9:
+							if(a[2][2]==0)
+							{	
+								a[2][2]=2;
+								k++;
+							}
+							else
+							{
+								printf("\nAlready this place filled!!\n\tEnter another input\n");
+							}	
+							break;
+						default:
+							printf("\n\tEnter valid input from 1 to 9!\n");
+					}
+				}
+				else
+				{
+					printf("\nYou entered a character.....Please enter the postion!\n");
+				}
+				for(i=0;i<3;i++)
+				{
+					for(j=0;j<3;j++)
+					{
+						printf("%d",a[i][j]);
+					}
+					printf("\n");
+				}
+				if(a[0][0]==a[0][1]&&a[0][0]==a[0][2]&&a[0][0]!=0&&a[0][1]!=0&&a[0][2]!=0)
+				{
+					printf("\n\t****User2 is the WINNER!!****\n\n");
+					break;
+				}
+				if(a[0][0]==a[1][0]&&a[0][0]==a[2][0]&&a[0][0]!=0&&a[1][0]!=0&&a[2][0]!=0)
+				{
+					printf("\n\t****User2 is the WINNER!!****\n\n");
+					break;
+				}
+				if(a[2][0]==a[2][1]&&a[2][0]==a[2][2]&&a[2][0]!=0&&a[2][1]!=0&&a[2][2]!=0)
+				{
+					printf("\n\t****User2 is the WINNER!!****\n\n");
+					break;
+				}
+				if(a[0][2]==a[1][2]&&a[0][2]==a[2][2]&&a[0][2]!=0&&a[1][2]!=0&&a[2][2]!=0)
+				{
+					printf("\n\t****User2 is the WINNER!!****\n\n");
+					break;
+				}
+				if(a[0][2]==a[1][1]&&a[0][2]==a[2][0]&&a[0][2]!=0&&a[1][1]!=0&&a[2][0]!=0)
+				{
+					printf("\n\t****User2 is the WINNER!!****\n\n");
+					break;
+				}
+				if(a[0][0]==a[1][1]&&a[0][0]==a[2][2]&&a[0][0]!=0&&a[1][1]!=0&&a[2][2]!=0)
+				{
+					printf("\n\t****User2 is the WINNER!!****\n\n");
+					break;
+				}
+				if(a[1][0]==a[1][1]&&a[1][0]==a[1][2]&&a[1][0]!=0&&a[1][1]!=0&&a[1][2]!=0)
+				{
+					printf("\n\t****User2 is the WINNER!!****\n\n");
+					break;
+				}
+				if(a[0][1]==a[1][1]&&a[0][1]==a[2][1]&&a[0][1]!=0&&a[1][1]!=0&&a[2][1]!=0)
+				{
+					printf("\n\t****User2 is the WINNER!!****\n\n");
+					break;
+				}
+			}
+		}	
+		if(k>8)
+		{
+			printf("\n\t****MATCH DRAW****\n\n\n\n");
+		}
+	}
+    getch();		
+}
