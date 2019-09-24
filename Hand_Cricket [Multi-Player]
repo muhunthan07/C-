@@ -27,7 +27,7 @@ void main()
 	}
 	else
 	{
-		printf("\nPlz enter valid option.....",r);
+		printf("\nPlz enter 1 or 2");
 	}
 	}
 	i=0;
